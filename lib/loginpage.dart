@@ -68,10 +68,23 @@ class _LoginPageState extends State<LoginPage> {
                   if (_formKey.currentState!.validate()) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomePage()));
+                      MaterialPageRoute(builder: (context) => HomePage()));
                   }
                 }, 
-                child: Text('Masuk'))
+                child: Text('Masuk')),
+              Row(
+                children: [
+                  Text('Belum memiliki akun? Shilahkan'),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => RegisterPage())
+                      );
+                  }, 
+                  child: Text('Daftar Disini!'))
+                ],
+              )
             ],
           ),
         )
