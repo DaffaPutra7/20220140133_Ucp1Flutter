@@ -111,7 +111,23 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),),
                   SizedBox(width: 5,),
-
+                  Expanded(child: ListTile(
+                    title: Text('Konfirmasi Password', style: TextStyle(fontSize: 15),),
+                    subtitle: TextFormField(
+                      controller: passwordController,
+                        decoration: const InputDecoration(
+                         prefixIcon: Icon(Icons.key_outlined), 
+                         hintText: 'Konfirmasi Password', 
+                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                        ),
+                        validator: (value) {
+                         if (value == null || value.isEmpty) {
+                           return 'Please enter your confirmation password';
+                          }
+                          return null;
+                        },
+                    ),
+                  ),),
                 ],
               ),
             ],
