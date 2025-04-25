@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/loginpage.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -130,6 +131,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),),
                 ],
               ),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                  }
+                }, 
+                child: Text('Daftar')
+              ),
+
             ],
           ),
         ),
