@@ -32,6 +32,24 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text('DAFTAR AKUN BARU',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+               Text('Nama Lengkap'),
+              TextFormField(
+                controller: namaController,
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.person_outlined), 
+                  hintText: 'Nama Lengkap', 
+                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your name';
+                  }
+                  return null;
+                },
+              ),
               
             ],
           ),
