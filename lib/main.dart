@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/loginpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,10 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/login',
+      routes: {
+        '/login' : (context) => const LoginPage(),
+      },
     );
   }
 }
