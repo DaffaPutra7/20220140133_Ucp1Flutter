@@ -50,6 +50,47 @@ class _RegisterPageState extends State<RegisterPage> {
                   return null;
                 },
               ),
+             
+              Row(
+                children: [
+                  Expanded(child: ListTile(
+                    title: Text('Nama'),
+                    subtitle: TextFormField(
+                      controller: namaController,
+                        decoration: const InputDecoration(
+                         prefixIcon: Icon(Icons.person_outlined), 
+                         hintText: 'Nama Lengkap', 
+                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                        ),
+                        validator: (value) {
+                         if (value == null || value.isEmpty) {
+                           return 'Please enter your name';
+                          }
+                          return null;
+                        },
+                    ),
+                  ),),
+                  SizedBox(width: 5,),
+                  Expanded(child: ListTile(
+                    title: Text('Nomor HP'),
+                    subtitle: TextFormField(
+                      controller: nohpController,
+                        decoration: const InputDecoration(
+                         prefixIcon: Icon(Icons.person_outlined), 
+                         hintText: 'No HP', 
+                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                        ),
+                        validator: (value) {
+                         if (value == null || value.isEmpty) {
+                           return 'Please enter your number';
+                          }
+                          return null;
+                        },
+                    ),
+                  ),),
+                ],
+              ),
+
               
             ],
           ),
