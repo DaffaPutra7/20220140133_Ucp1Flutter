@@ -58,7 +58,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     subtitle: TextFormField(
                       controller: namaController,
                         decoration: const InputDecoration(
-                         prefixIcon: Icon(Icons.person_outlined), 
+                         prefixIcon: Icon(Icons.email_outlined), 
                          hintText: 'Nama Lengkap', 
                           border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
                         ),
@@ -76,7 +76,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     subtitle: TextFormField(
                       controller: nohpController,
                         decoration: const InputDecoration(
-                         prefixIcon: Icon(Icons.person_outlined), 
+                         prefixIcon: Icon(Icons.phone_outlined), 
                          hintText: 'No HP', 
                           border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
                         ),
