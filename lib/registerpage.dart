@@ -8,13 +8,17 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  
+
   final TextEditingController namaController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nohpController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmpasswordController = TextEditingController();
 
+  @override
+  void initState() {
+    super.initState();
+  }
   
   @override
   Widget build(BuildContext context) {
