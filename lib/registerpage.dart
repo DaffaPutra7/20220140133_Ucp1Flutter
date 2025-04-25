@@ -91,7 +91,29 @@ class _RegisterPageState extends State<RegisterPage> {
                 ],
               ),
 
-              
+              Row(
+                children: [
+                  Expanded(child: ListTile(
+                    title: Text('Password'),
+                    subtitle: TextFormField(
+                      controller: passwordController,
+                        decoration: const InputDecoration(
+                         prefixIcon: Icon(Icons.key_outlined), 
+                         hintText: 'Password', 
+                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                        ),
+                        validator: (value) {
+                         if (value == null || value.isEmpty) {
+                           return 'Please enter your password';
+                          }
+                          return null;
+                        },
+                    ),
+                  ),),
+                  SizedBox(width: 5,),
+
+                ],
+              ),
             ],
           ),
         ),
