@@ -69,8 +69,9 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                        context, 
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                    );
                   }
                 }, 
                 child: Text('Masuk')),
