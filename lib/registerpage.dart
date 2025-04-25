@@ -141,7 +141,19 @@ class _RegisterPageState extends State<RegisterPage> {
                 }, 
                 child: Text('Daftar')
               ),
-
+              Row(
+                children: [
+                  Text('Sudah memiliki akun? Silahkan'),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => LoginPage())
+                      );
+                  }, 
+                  child: Text('Login Disini!'))
+                ],
+              ),
             ],
           ),
         ),
