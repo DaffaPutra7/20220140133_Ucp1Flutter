@@ -62,8 +62,16 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   return null;
                 },
-                
-              )
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()));
+                  }
+                }, 
+                child: Text('Masuk'))
             ],
           ),
         )
