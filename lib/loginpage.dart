@@ -36,9 +36,10 @@ class _LoginPageState extends State<LoginPage> {
               TextFormField(
                 controller: emailController,
                 decoration: const InputDecoration(
-                  icon: Icon(Icons.email), 
+                  prefixIcon: Icon(Icons.email_outlined), 
                   hintText: 'Email', 
-                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))),
+                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
@@ -46,7 +47,23 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              
+              Padding(padding: const EdgeInsets.all(10.0)),
+              Text('Password'),
+              TextFormField(
+                controller: passwordController,
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.key),
+                  hintText: 'Password',
+                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))),
+                obscureText: true,
+                validator:(value) {
+                  if( value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  }
+                  return null;
+                },
+                
+              )
             ],
           ),
         )
