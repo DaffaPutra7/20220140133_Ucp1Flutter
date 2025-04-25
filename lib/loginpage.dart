@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text('Masuk')),
               Row(
                 children: [
-                  Text('Belum memiliki akun? Shilahkan'),
+                  Text('Belum memiliki akun? Silahkan'),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
