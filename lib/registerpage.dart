@@ -33,10 +33,15 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('DAFTAR AKUN BARU',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              Center(
+                child: Text('DAFTAR AKUN BARU',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+                ),
               ),
-              Text('Nama Lengkap',style: TextStyle(fontWeight: FontWeight.bold),),
+              Padding(padding: EdgeInsets.all(15.0)),
+              Text('Nama Lengkap',style: TextStyle(fontWeight: FontWeight.bold)),
               Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
                 controller: namaController,
@@ -54,94 +59,142 @@ class _RegisterPageState extends State<RegisterPage> {
                   return null;
                 },
               ),
-             
+              Padding(padding: EdgeInsets.all(10.0)),
               Row(
                 children: [
-                  Expanded(child: ListTile(
-                    title: Text('Nama'),
-                    subtitle: TextFormField(
-                      controller: namaController,
-                        decoration: const InputDecoration(
-                         prefixIcon: Icon(Icons.email_outlined), 
-                         hintText: 'Nama Lengkap', 
-                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Email', style: TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: 5),
+                        TextFormField(
+                          controller: emailController,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.email_outlined), 
+                            hintText: 'Email', 
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your email';
+                            }
+                            return null;
+                          },
                         ),
-                        validator: (value) {
-                         if (value == null || value.isEmpty) {
-                           return 'Please enter your name';
-                          }
-                          return null;
-                        },
+                      ],
                     ),
-                  ),),
-                  SizedBox(width: 5,),
-                  Expanded(child: ListTile(
-                    title: Text('Nomor HP'),
-                    subtitle: TextFormField(
-                      controller: nohpController,
-                        decoration: const InputDecoration(
-                         prefixIcon: Icon(Icons.phone_outlined), 
-                         hintText: 'No HP', 
-                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [ 
+                        Text('Nomor HP', style: TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: 5),
+                        TextFormField(
+                          controller: nohpController,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.phone_outlined), 
+                            hintText: 'No HP', 
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your number';
+                            }
+                            return null;
+                          },
                         ),
-                        validator: (value) {
-                         if (value == null || value.isEmpty) {
-                           return 'Please enter your number';
-                          }
-                          return null;
-                        },
+                      ],
                     ),
-                  ),),
+                  ),
                 ],
               ),
-
+              Padding(padding: EdgeInsets.all(10.0)),
               Row(
                 children: [
-                  Expanded(child: ListTile(
-                    title: Text('Password'),
-                    subtitle: TextFormField(
-                      controller: passwordController,
-                        decoration: const InputDecoration(
-                         prefixIcon: Icon(Icons.key_outlined), 
-                         hintText: 'Password', 
-                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [ 
+                        Text('Password', style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextFormField(
+                          controller: passwordController,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.lock_outlined), 
+                            hintText: 'Password', 
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your password';
+                            }
+                            return null;
+                          },
                         ),
-                        validator: (value) {
-                         if (value == null || value.isEmpty) {
-                           return 'Please enter your password';
-                          }
-                          return null;
-                        },
+                      ],
                     ),
-                  ),),
-                  SizedBox(width: 5,),
-                  Expanded(child: ListTile(
-                    title: Text('Konfirmasi Password', style: TextStyle(fontSize: 15),),
-                    subtitle: TextFormField(
-                      controller: passwordController,
-                        decoration: const InputDecoration(
-                         prefixIcon: Icon(Icons.key_outlined), 
-                         hintText: 'Konfirmasi Password', 
-                          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [ 
+                        Text('Konfirmasi Password', style: TextStyle(fontSize: 15)),
+                        SizedBox(height: 5),
+                        TextFormField(
+                          controller: confirmpasswordController,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.lock_outlined), 
+                            hintText: 'Konfirmasi Password', 
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                              borderSide: BorderSide(color: Colors.black)),
+                            ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your confirmation password';
+                            }
+                            return null;
+                          },
                         ),
-                        validator: (value) {
-                         if (value == null || value.isEmpty) {
-                           return 'Please enter your confirmation password';
-                          }
-                          return null;
-                        },
+                      ],
                     ),
-                  ),),
+                  ),
                 ],
               ),
+              Padding(padding: EdgeInsets.all(10.0)),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => LoginPage()));
-                  }
-                }, 
+                    }
+                  }, 
                 child: Text('Daftar')
               ),
               Row(
@@ -153,7 +206,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         context, 
                         MaterialPageRoute(builder: (context) => LoginPage())
                       );
-                  }, 
+                    }, 
                   child: Text('Login Disini!'))
                 ],
               ),
