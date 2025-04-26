@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Text('DAFTAR AKUN BARU',
                 style: TextStyle(
                   fontSize: 25,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(padding: EdgeInsets.all(15.0)),
@@ -68,7 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Email', style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(height: 5),
+                        SizedBox(height: 10),
                         TextFormField(
                           controller: emailController,
                           decoration: const InputDecoration(
@@ -98,7 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [ 
                         Text('Nomor HP', style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(height: 5),
+                        SizedBox(height: 10),
                         TextFormField(
                           controller: nohpController,
                           decoration: const InputDecoration(
@@ -132,6 +132,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [ 
                         Text('Password', style: TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: 10),
                         TextFormField(
                           controller: passwordController,
                           decoration: const InputDecoration(
@@ -161,7 +162,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [ 
                         Text('Konfirmasi Password', style: TextStyle(fontSize: 15)),
-                        SizedBox(height: 5),
+                        SizedBox(height: 10),
                         TextFormField(
                           controller: confirmpasswordController,
                           decoration: const InputDecoration(
@@ -186,28 +187,47 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.all(10.0)),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
-                    }
-                  }, 
-                child: Text('Daftar')
+              Padding(padding: EdgeInsets.all(15.0)),
+              Center(
+                child: SizedBox(
+                  width: 500,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      elevation: 5,
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.push(
+                          context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                      }
+                    }, 
+                    child: Text('Daftar', style: TextStyle(color: Colors.white),)
+                  ),
+                ),
               ),
+              Padding(padding: EdgeInsets.all(5.0)),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Sudah memiliki akun? Silahkan'),
+                  SizedBox(width: 4),
                   TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context, 
                         MaterialPageRoute(builder: (context) => LoginPage())
                       );
                     }, 
-                  child: Text('Login Disini!'))
+                  child: Text('Login Disini!', style: TextStyle(color: Colors.orange),))
                 ],
               ),
             ],
