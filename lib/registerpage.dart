@@ -36,13 +36,16 @@ class _RegisterPageState extends State<RegisterPage> {
               Text('DAFTAR AKUN BARU',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-               Text('Nama Lengkap'),
+              Text('Nama Lengkap',style: TextStyle(fontWeight: FontWeight.bold),),
+              Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
                 controller: namaController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.person_outlined), 
                   hintText: 'Nama Lengkap', 
-                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    borderSide: BorderSide(color: Colors.black))
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
