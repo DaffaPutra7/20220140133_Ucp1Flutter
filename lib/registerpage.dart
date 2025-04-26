@@ -16,6 +16,9 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmpasswordController = TextEditingController();
 
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
+
   @override
   void initState() {
     super.initState();
@@ -25,7 +28,9 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
     return Scaffold(
-      body: Form(
+      resizeToAvoidBottomInset: true,
+      body: SingleChildScrollView(
+      child: Form(
         key: _formKey,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -135,7 +140,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         SizedBox(height: 10),
                         TextFormField(
                           controller: passwordController,
-                          decoration: const InputDecoration(
+                          obscureText: _obscurePassword,
+                          decoration:  InputDecoration(
                             prefixIcon: Icon(Icons.lock_outlined), 
                             hintText: 'Password', 
                             border: OutlineInputBorder(
@@ -144,6 +150,15 @@ class _RegisterPageState extends State<RegisterPage> {
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
                               borderSide: BorderSide(color: Colors.black)),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _obscurePassword = !_obscurePassword;
+                                });
+                              }, 
+                              icon: Icon(
+                                _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                              ))
                             ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -233,6 +248,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ],
           ),
         ),
+      ),
       ),
     );
   }
