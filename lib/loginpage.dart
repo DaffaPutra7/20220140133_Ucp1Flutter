@@ -15,6 +15,8 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  bool _obscurePassword = true;
+
   @override
   void initState() {
     super.initState();
@@ -67,19 +69,29 @@ class _LoginPageState extends State<LoginPage> {
               Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
                 controller: passwordController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock),
                   hintText: 'Password',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
                     borderSide: BorderSide(color: Colors.orange)
-                    ),
+                  ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
                     borderSide: BorderSide(color: Colors.orange)
+                  ),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _obscurePassword = !_obscurePassword;
+                      });
+                    }, 
+                    icon: Icon(
+                      _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                    )
                   )
                 ),
-                obscureText: true,
+                obscureText: _obscurePassword,
                 validator:(value) {
                   if( value == null || value.isEmpty) {
                     return 'Please enter your password';
@@ -87,6 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
+              Padding(padding: EdgeInsets.all(15.0)),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
