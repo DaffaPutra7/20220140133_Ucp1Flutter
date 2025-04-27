@@ -25,7 +25,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
+      body: SingleChildScrollView(
+      child: Form(
         key: _formKey,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -33,6 +34,14 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 80),
+              Center(
+                child: Image.asset(
+                  'assets/image/strava.png',
+                  height: 100,
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(15.0)),
               Center(
                 child: Text('SELAMAT DATANG KEMBALI',
                 style: TextStyle(
@@ -147,6 +156,7 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
         )
+      ),
       ),
     );
   }

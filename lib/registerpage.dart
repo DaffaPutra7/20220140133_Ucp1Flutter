@@ -39,6 +39,14 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 100),
+              Center(
+                child: Image.asset(
+                  'assets/image/strava.png',
+                  height: 100,
+                ),
+              ),
+              SizedBox(height: 20),
               Center(
                 child: Text('DAFTAR AKUN BARU',
                 style: TextStyle(
