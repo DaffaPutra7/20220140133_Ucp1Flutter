@@ -176,11 +176,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [ 
-                        Text('Konfirmasi Password', style: TextStyle(fontSize: 15)),
+                        Text('Konfirmasi Password', style: TextStyle(fontWeight: FontWeight.bold)),
                         SizedBox(height: 10),
                         TextFormField(
                           controller: confirmpasswordController,
-                          decoration: const InputDecoration(
+                          obscureText: _obscureConfirmPassword,
+                          decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock_outlined), 
                             hintText: 'Konfirmasi Password', 
                             border: OutlineInputBorder(
@@ -189,6 +190,15 @@ class _RegisterPageState extends State<RegisterPage> {
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
                               borderSide: BorderSide(color: Colors.black)),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _obscureConfirmPassword = !_obscureConfirmPassword;
+                                });
+                              },
+                              icon: Icon(
+                                _obscureConfirmPassword ? Icons.visibility_off : Icons.visibility,
+                              ))
                             ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
