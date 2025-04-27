@@ -16,7 +16,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+      child: Column(
         children: [
           Container(
             padding: EdgeInsets.only(top: 40, left: 20, right: 20, bottom: 20),
@@ -78,7 +79,70 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: GestureDetector(
+                    onTap: () {
+
+                    },
+                    child: Container(
+                      height: 100,
+                      margin: EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.assignment, color: Colors.white, size: 40),
+                          SizedBox(height: 10),
+                          Text(
+                            'Data Piket',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ),
+                Expanded(
+                  flex: 2,
+                  child: GestureDetector(
+                    onTap: () {
+
+                    },
+                    child: Container(
+                      height: 100,
+                      margin: EdgeInsets.only(left: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.group_add, color: Colors.white, size: 40),
+                          SizedBox(height: 10),
+                          Text(
+                            'Data Pelanggan',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ),
+              ],
+            ),
+          ),
         ],
+      ),
       ),
     );
   }
