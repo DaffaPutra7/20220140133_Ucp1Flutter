@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/datapiketpage.dart';
 import 'package:ucp1flutter_20220140133/loginpage.dart';
 
 class HomePage extends StatefulWidget {
@@ -88,7 +89,10 @@ class _HomePageState extends State<HomePage> {
                   flex: 2,
                   child: GestureDetector(
                     onTap: () {
-
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => DataPiketPage())
+                      );
                     },
                     child: Container(
                       height: 120,
