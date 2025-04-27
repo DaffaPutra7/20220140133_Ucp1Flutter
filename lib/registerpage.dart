@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/homepage.dart';
 import 'package:ucp1flutter_20220140133/loginpage.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -9,6 +10,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final _formKey = GlobalKey<FormState>();
 
   final TextEditingController namaController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -26,7 +28,6 @@ class _RegisterPageState extends State<RegisterPage> {
   
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
@@ -227,9 +228,22 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.push(
-                          context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                        if (passwordController.text != confirmpasswordController.text) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Password harus sama!'),
+                              backgroundColor: Colors.orange, 
+                            ),
+                          );
+                          return;
+                        } else {
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(builder: (context) => HomePage(
+                              email: emailController.text)
+                            )
+                          );
+                        }
                       }
                     }, 
                     child: Text('Daftar', style: TextStyle(color: Colors.white),)
