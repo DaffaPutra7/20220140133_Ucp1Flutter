@@ -66,7 +66,18 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
-          )
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                'assets/image/strava.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
         ],
       ),
     );
