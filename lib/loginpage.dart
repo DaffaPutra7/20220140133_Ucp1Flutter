@@ -100,18 +100,32 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               Padding(padding: EdgeInsets.all(15.0)),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    Navigator.push(
+              Center(
+                child: SizedBox(
+                  width: 500,
+                  height: 50,
+                  child:  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      elevation: 5,
+                    ),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.push(
                         context, 
                         MaterialPageRoute(builder: (context) => HomePage(
                           email: emailController.text,
-                        )),
+                        )
+                      ),
                     );
                   }
                 }, 
-                child: Text('Masuk')),
+                child: Text('Masuk', style: TextStyle(color: Colors.white),)),
+                ),
+              ),
               Row(
                 children: [
                   Text('Belum memiliki akun? Silahkan'),
