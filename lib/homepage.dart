@@ -91,7 +91,9 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context) => DataPiketPage())
+                        MaterialPageRoute(builder: (context) => DataPiketPage(
+                          email: widget.email,
+                        ))
                       );
                     },
                     child: Container(
