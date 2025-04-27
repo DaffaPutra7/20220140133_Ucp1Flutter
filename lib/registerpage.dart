@@ -52,11 +52,16 @@ class _RegisterPageState extends State<RegisterPage> {
               TextFormField(
                 controller: namaController,
                 decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.person_outlined), 
+                  prefixIcon: Icon(Icons.person), 
                   hintText: 'Nama Lengkap', 
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                    borderSide: BorderSide(color: Colors.black))
+                    borderSide: BorderSide(color: Colors.orange)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    borderSide: BorderSide(color: Colors.orange)
+                  ),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -78,15 +83,17 @@ class _RegisterPageState extends State<RegisterPage> {
                         TextFormField(
                           controller: emailController,
                           decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.email_outlined), 
+                            prefixIcon: Icon(Icons.email), 
                             hintText: 'Email', 
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
+                            ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
                             ),
+                          ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your email';
@@ -108,15 +115,17 @@ class _RegisterPageState extends State<RegisterPage> {
                         TextFormField(
                           controller: nohpController,
                           decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.phone_outlined), 
+                            prefixIcon: Icon(Icons.phone), 
                             hintText: 'No HP', 
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
+                            ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
                             ),
+                          ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your number';
@@ -143,14 +152,16 @@ class _RegisterPageState extends State<RegisterPage> {
                           controller: passwordController,
                           obscureText: _obscurePassword,
                           decoration:  InputDecoration(
-                            prefixIcon: Icon(Icons.lock_outlined), 
+                            prefixIcon: Icon(Icons.lock), 
                             hintText: 'Password', 
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
+                            ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
+                            ),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
@@ -159,8 +170,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               }, 
                               icon: Icon(
                                 _obscurePassword ? Icons.visibility_off : Icons.visibility,
-                              ))
-                            ),
+                              )
+                            )
+                          ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
@@ -183,14 +195,16 @@ class _RegisterPageState extends State<RegisterPage> {
                           controller: confirmpasswordController,
                           obscureText: _obscureConfirmPassword,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock_outlined), 
+                            prefixIcon: Icon(Icons.lock), 
                             hintText: 'Konfirmasi Password', 
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
+                            ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: Colors.orange)
+                            ),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
@@ -199,8 +213,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               },
                               icon: Icon(
                                 _obscureConfirmPassword ? Icons.visibility_off : Icons.visibility,
-                              ))
-                            ),
+                              )
+                            )
+                          ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your confirmation password';

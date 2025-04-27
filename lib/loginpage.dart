@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -21,7 +22,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
     return Scaffold(
       body: Form(
         key: _formKey,
@@ -31,16 +31,29 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('SELAMAT DATANG KEMBALI',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              Center(
+                child: Text('SELAMAT DATANG KEMBALI',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500),
+                ),
               ),
+              Padding(padding: EdgeInsets.all(15.0)),
               Text('Email'),
+              Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
                 controller: emailController,
                 decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.email_outlined), 
+                  prefixIcon: Icon(Icons.email), 
                   hintText: 'Email', 
-                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    borderSide: BorderSide(color: Colors.black)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    borderSide: BorderSide(color: Colors.orange)
+                  ),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -50,13 +63,22 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               Padding(padding: const EdgeInsets.all(10.0)),
-              Text('Password'),
+              Text('Password',style: TextStyle(fontWeight: FontWeight.w500)),
+              Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
                 controller: passwordController,
                 decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.key),
+                  prefixIcon: Icon(Icons.lock),
                   hintText: 'Password',
-                  border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    borderSide: BorderSide(color: Colors.orange)
+                    ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    borderSide: BorderSide(color: Colors.orange)
+                  )
+                ),
                 obscureText: true,
                 validator:(value) {
                   if( value == null || value.isEmpty) {
