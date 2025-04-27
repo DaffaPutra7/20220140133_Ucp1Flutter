@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
 
                     },
                     child: Container(
-                      height: 100,
+                      height: 120,
                       margin: EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
                         color: Colors.orange,
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
 
                     },
                     child: Container(
-                      height: 100,
+                      height: 120,
                       margin: EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                         color: Colors.orange,
@@ -140,6 +140,36 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: SizedBox(
+              width: double.infinity,
+              height: 140,
+              child: GestureDetector(
+                onTap: () {
+
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.receipt_long, color: Colors.white, size: 60),
+                      SizedBox(height: 10),
+                      Text(
+                        'Barang Masuk/Keluar',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ), 
           ),
         ],
       ),
