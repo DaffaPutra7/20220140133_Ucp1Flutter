@@ -81,6 +81,54 @@ class _DataPiketPageState extends State<DataPiketPage> {
   
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Piket Gudang', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.orange,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Nama Anggota'),
+              SizedBox(height: 5),
+              TextFormField(
+                initialValue: widget.email,
+                enabled: false,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15)
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Text('Pilih Tanggal'),
+              SizedBox(height: 5),
+              TextFormField(
+                controller: _tanggalController,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.calendar_today),
+                  hintText: 'Pilih Tanggal',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.orange)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.orange)
+                  ),
+                  errorText: _tanggalError,
+                ),
+                readOnly: true,
+                onTap: _pilihTanggal,
+              ),
+            ],
+          ),
+        ), 
+      ),
+    );
   }
 }
