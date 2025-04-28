@@ -161,7 +161,39 @@ class _DataPiketPageState extends State<DataPiketPage> {
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                     ), 
                     child: Text('Tambah', style: TextStyle(color: Colors.white)),
+                  ),
+                  SizedBox(height: 20),
+              Text('Daftar Tugas Piket'),
+              SizedBox(height: 10),
+              Expanded(
+                child: daftarTugas.isEmpty
+                  ? const Center(child: Text('Belum ada Data'))
+                  : ListView.builder(
+                    itemCount: daftarTugas.length,
+                    itemBuilder: (context, index) {
+                      final data = daftarTugas[index];
+                      return Card(
+                        color: Colors.orange,
+                        child: ListTile(
+                          title: Text(
+                            data['tugas']!,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          trailing: Icon(Icons.arrow_forward, color: Colors.white),
+                          onTap: () {
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(
+                                builder: (context) => DetailDataPiketPage(
+                                )
+                              )
+                            );
+                          },
+                        ),
+                      );
+                    }
                   )
+                )
                 ],
               ),
             ],
