@@ -12,8 +12,51 @@ class DataPiketPage extends StatefulWidget {
 }
 
 class _DataPiketPageState extends State<DataPiketPage> {
+
+  final _formKey = GlobalKey<FormState>();
   final TextEditingController _tanggalController = TextEditingController();
   final TextEditingController _tugasController = TextEditingController();
+
+  List<Map<String, String>> daftarTugas = [];
+  String? _tanggalError;
+
+  Future<void> _pilihTanggal() async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context, 
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000), 
+      lastDate: DateTime(2100),
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: Colors.orange, 
+              onPrimary: Colors.white, 
+              onSurface: Colors.black
+            ),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.orange,
+              ),
+            ),
+            dialogTheme: DialogTheme(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24)
+              ),
+            ),
+          ), 
+          child: child!,
+        );
+      },
+    );
+    if (pickedDate != null) {
+      String formattedDate = "${pickedDate.day}-${pickedDate.month}-${pickedDate.year}";
+      setState(() {
+        _tanggalController.text = formattedDate;
+        _tanggalError = null;
+      });
+    }
+  }
   
   @override
   Widget build(BuildContext context) {
