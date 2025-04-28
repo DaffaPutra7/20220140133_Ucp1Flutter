@@ -125,6 +125,45 @@ class _DataPiketPageState extends State<DataPiketPage> {
                 readOnly: true,
                 onTap: _pilihTanggal,
               ),
+              SizedBox(height: 20),
+              Text('Tugas Piket'),
+              SizedBox(height: 5),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: TextFormField(
+                      controller: _tugasController,
+                      decoration: InputDecoration(
+                        hintText: 'Masukkan Tugas',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(color: Colors.orange)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(color: Colors.orange)
+                        )
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Tugas tidak boleh kosong';
+                        }
+                        return null;
+                      },
+                    ), 
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: _tambahTugas,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    ), 
+                    child: Text('Tambah', style: TextStyle(color: Colors.white)),
+                  )
+                ],
+              ),
             ],
           ),
         ), 
