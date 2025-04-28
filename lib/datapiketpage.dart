@@ -163,7 +163,9 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     ), 
                     child: Text('Tambah', style: TextStyle(color: Colors.white)),
                   ),
-                  SizedBox(height: 20),
+                ],
+              ),
+              SizedBox(height: 20),
               Text('Daftar Tugas Piket'),
               SizedBox(height: 10),
               Expanded(
@@ -200,10 +202,8 @@ class _DataPiketPageState extends State<DataPiketPage> {
                 )
                 ],
               ),
-            ],
           ),
         ), 
-      ),
-    );
+      );
   }
 }
