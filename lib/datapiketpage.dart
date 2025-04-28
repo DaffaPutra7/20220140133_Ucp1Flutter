@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/detaildatapiketpage.dart';
 
 class DataPiketPage extends StatefulWidget {
   final String email;
@@ -185,6 +186,9 @@ class _DataPiketPageState extends State<DataPiketPage> {
                               context, 
                               MaterialPageRoute(
                                 builder: (context) => DetailDataPiketPage(
+                                  tanggal: data['tanggal']!,
+                                  tugas: data['tugas']!,
+                                  email: widget.email,
                                 )
                               )
                             );
