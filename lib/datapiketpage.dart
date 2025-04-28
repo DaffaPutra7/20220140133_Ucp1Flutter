@@ -57,6 +57,27 @@ class _DataPiketPageState extends State<DataPiketPage> {
       });
     }
   }
+
+  void _tambahTugas() {
+    setState(() {
+      if (_tanggalController.text.isEmpty) {
+        _tanggalError = "Tanggal tidak boleh kosong";
+      } else {
+        _tanggalError = null;
+      }
+    });
+
+    if (_formKey.currentState!.validate() && _tanggalError == null) {
+      setState(() {
+        daftarTugas.add({
+          'tugas': _tugasController.text,
+          'tanggal': _tanggalController.text,
+        });
+        _tugasController.clear();
+        _tanggalController.clear();
+      });
+    }
+  }
   
   @override
   Widget build(BuildContext context) {
