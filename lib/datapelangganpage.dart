@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/loginpage.dart';
 
 class DataPelangganPage extends StatefulWidget {
   const DataPelangganPage({super.key});
@@ -206,7 +207,34 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                       )
                     )
                   ],
-                )
+                ),
+                SizedBox(height: 30),
+                Center(
+                  child: SizedBox(
+                    width: 500,
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        elevation: 5,
+                      ),
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DetailDataPelangganPage(
+
+                            ))
+                          );
+                        }
+                      },
+                      child: Text('Daftar', style: TextStyle(color: Colors.white)),
+                    ),
+                  ),
+                ),
               ],
             ), 
           )
