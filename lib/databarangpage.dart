@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:ucp1flutter_20220140133/detaildatabarangpage.dart';
 
 class DataBarangPage extends StatefulWidget {
   const DataBarangPage({super.key});
@@ -245,6 +246,19 @@ class _DataBarangPageState extends State<DataBarangPage> {
                       int jumlah = int.parse(_jumlahController.text);
                       int harga = int.parse(_hargaController.text);
                       int totalHarga = jumlah * harga;
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailDataBarangPage(
+                          tanggal: _tanggalController.text,
+                          jenisTransaksi: selectedJenisTransaksi!,
+                          jenisBarang: selectedJenisBarang!,
+                          jumlah: jumlah,
+                          harga: harga,
+                          total: totalHarga,
+                          ),
+                        ),
+                      );
                     }
                   },
                   child: const Text('Submit', style: TextStyle(color: Colors.white)),
