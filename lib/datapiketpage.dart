@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:ucp1flutter_20220140133/detaildatapiketpage.dart';
+import 'package:intl/intl.dart';
 
 class DataPiketPage extends StatefulWidget {
   final String email;
@@ -51,9 +53,11 @@ class _DataPiketPageState extends State<DataPiketPage> {
       },
     );
     if (pickedDate != null) {
-      String formattedDate = "${pickedDate.day}-${pickedDate.month}-${pickedDate.year}";
+      String formatTanggal(DateTime date) {
+        return DateFormat('EEEE, dd MMMM yyyy', 'id_ID').format(date);
+      }
       setState(() {
-        _tanggalController.text = formattedDate;
+        _tanggalController.text = formatTanggal(pickedDate);
         _tanggalError = null;
       });
     }
@@ -78,6 +82,12 @@ class _DataPiketPageState extends State<DataPiketPage> {
         _tanggalController.clear();
       });
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initializeDateFormatting('id_ID');
   }
   
   @override
