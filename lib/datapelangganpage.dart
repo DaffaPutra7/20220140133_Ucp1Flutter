@@ -24,6 +24,12 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
   
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Data Pelanggan', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        backgroundColor: Colors.orange,
+      ),
+    );
   }
 }

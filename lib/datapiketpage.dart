@@ -85,7 +85,8 @@ class _DataPiketPageState extends State<DataPiketPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('Piket Gudang', style: TextStyle(color: Colors.white)),
+        title: const Text('Piket Gudang', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        centerTitle: true,
         backgroundColor: Colors.orange,
       ),
       body: Padding(
