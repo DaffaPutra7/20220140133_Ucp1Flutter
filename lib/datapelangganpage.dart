@@ -235,6 +235,27 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: 30),
+                Center(
+                  child: SizedBox(
+                    width: 500,
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          side: BorderSide(color: Colors.orange)
+                        ),
+                        elevation: 5,
+                      ),
+                      onPressed: () {
+
+                      }, 
+                      child: Text('Reset', style: TextStyle(color: Colors.orange),)
+                    ),
+                  )
+                )
               ],
             ), 
           )
