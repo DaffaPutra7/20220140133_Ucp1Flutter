@@ -168,6 +168,66 @@ class _DataBarangPageState extends State<DataBarangPage> {
                   return null;
                 },
               ),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Jumlah Barang', style: TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          controller: _jumlahController,
+                          decoration: InputDecoration(
+                            hintText: 'Jumlah Barang',
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide(color: Colors.orange)
+                            )
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Jumlah tidak boleh kosong';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Harga Satuan', style: TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          controller: _hargaController,
+                          readOnly: true,
+                          decoration: InputDecoration(
+                            prefixText: 'Rp. ',
+                            hintText: 'Harga Satuan',
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide(color: Colors.orange)
+                            )
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Pilih jenis barang';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
