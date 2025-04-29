@@ -16,7 +16,8 @@ class DetailDataPiketPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text('Detail $tugas', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+        title: Text('Detail $tugas', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
@@ -31,7 +32,7 @@ class DetailDataPiketPage extends StatelessWidget {
                 ),
                 Spacer(),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
                     color: Colors.orange,
                     borderRadius: BorderRadius.circular(20),
