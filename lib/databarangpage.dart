@@ -117,6 +117,57 @@ class _DataBarangPageState extends State<DataBarangPage> {
                   return null;
                 },
               ),
+              SizedBox(height: 30),
+              DropdownButtonFormField<String>(
+                value: selectedJenisTransaksi,
+                decoration: InputDecoration(
+                  hintText: 'Jenis Transaksi',
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.orange)
+                  ),
+                ),
+                items: jenisTransaksi.map((item) {
+                  return DropdownMenuItem(value: item, child: Text(item));
+                }).toList(),
+                onChanged: (value) {
+                  setState(() => selectedJenisTransaksi = value);
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Pilih jenis transaksi';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 30),
+              DropdownButtonFormField<String>(
+                value: selectedJenisBarang,
+                decoration: InputDecoration(
+                  hintText: 'Jenis Barang',
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.orange)
+                  )
+                ),
+                items: jenisBarang.map((item) {
+                  return DropdownMenuItem(value: item, child: Text(item));
+                }).toList(),
+                onChanged: (value) {
+                  setState(() {
+                    selectedJenisBarang = value;
+                    _hargaController.text = value != null ? hargaBarang[value]!.toString() : '';
+                  });
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Pilih jenis barang';
+                  }
+                  return null;
+                },
+              ),
             ],
           ),
         ),
