@@ -126,6 +126,87 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                     ),
                   ],
                 ),
+                SizedBox(height: 20),
+                Text('Alamat', style: TextStyle(fontWeight: FontWeight.bold)),
+                SizedBox(height: 10),
+                TextFormField(
+                  controller: alamatController,
+                  decoration: InputDecoration(
+                    hintText: 'Alamat',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                      borderSide: BorderSide(color: Colors.orange)
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                      borderSide: BorderSide(color: Colors.orange)
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your address';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Provinsi', style: TextStyle(fontWeight: FontWeight.bold)),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: provinsiController,
+                            decoration: InputDecoration(
+                              hintText: 'Provinsi',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: BorderSide(color: Colors.orange)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: BorderSide(color: Colors.orange)
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your province';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ) 
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Kode Pos', style: TextStyle(fontWeight: FontWeight.bold)),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: posController,
+                            decoration: InputDecoration(
+                              hintText: 'Kode Pos',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: BorderSide(color: Colors.orange)
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: BorderSide(color: Colors.orange)
+                              )
+                            ),
+                          )
+                        ],
+                      )
+                    )
+                  ],
+                )
               ],
             ), 
           )
