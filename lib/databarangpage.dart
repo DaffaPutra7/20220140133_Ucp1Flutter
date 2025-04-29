@@ -81,6 +81,46 @@ class _DataBarangPageState extends State<DataBarangPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: const Text('Pendataan Barang', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(20),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            children: [
+              Text('Tanggal Transaksi', style: TextStyle(fontWeight: FontWeight.bold)),
+              SizedBox(height: 10),
+              TextFormField(
+                controller: _tanggalController,
+                readOnly: true,
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.calendar_today),
+                  hintText: 'Tanggal Transaksi',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.orange)
+                  )
+                ),
+                onTap: () => _selectTanggal(context),
+                validator:(value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Tanggal tidak boleh kosong';
+                  }
+                  return null;
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
