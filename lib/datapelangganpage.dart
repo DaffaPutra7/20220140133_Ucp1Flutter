@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ucp1flutter_20220140133/detaildatapelangganpage.dart';
-import 'package:ucp1flutter_20220140133/loginpage.dart';
 
 class DataPelangganPage extends StatefulWidget {
   const DataPelangganPage({super.key});
