@@ -55,6 +55,68 @@ class DetailDataPelangganPage extends StatelessWidget {
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                 ),
               ),
+
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Provinsi', style: TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: 8),
+                        TextFormField(
+                          initialValue: provinsi,
+                          readOnly: true,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Kode Pos', style: TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: 8),
+                        TextFormField(
+                          initialValue: kodepos,
+                          readOnly: true,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 30),
+              Center(
+                child: SizedBox(
+                  width: 500,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      elevation: 5,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => HomePage(email: email))
+                      );
+                    }, 
+                    child: Text('Selesai', style: TextStyle(color: Colors.white)),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
