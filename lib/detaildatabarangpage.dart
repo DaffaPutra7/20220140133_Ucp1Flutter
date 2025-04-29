@@ -96,4 +96,31 @@ class DetailDataBarangPage extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildInfoRow(String label, String value) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
+          Flexible(
+            child: Text(
+              value,
+              textAlign: TextAlign.right,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildDivider() {
+    return Divider(
+      height: 5,
+      thickness: 1,
+      color: Colors.black12,
+    );
+  }
 }
