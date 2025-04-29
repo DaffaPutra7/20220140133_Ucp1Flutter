@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/detaildatapelangganpage.dart';
 import 'package:ucp1flutter_20220140133/loginpage.dart';
 
 class DataPelangganPage extends StatefulWidget {
@@ -200,8 +201,14 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                                 borderSide: BorderSide(color: Colors.orange)
-                              )
+                              ),
                             ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your postal code';
+                              }
+                              return null;
+                            },
                           )
                         ],
                       )
@@ -226,12 +233,17 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => DetailDataPelangganPage(
-
+                              nama: namaController.text,
+                              email: emailController.text,
+                              nohp: nohpController.text,
+                              alamat: alamatController.text,
+                              provinsi: provinsiController.text,
+                              kodepos: posController.text,
                             ))
                           );
                         }
                       },
-                      child: Text('Daftar', style: TextStyle(color: Colors.white)),
+                      child: Text('Simpan', style: TextStyle(color: Colors.white)),
                     ),
                   ),
                 ),
@@ -250,7 +262,16 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                         elevation: 5,
                       ),
                       onPressed: () {
-
+                        _formKey.currentState!.reset();
+                        namaController.clear();
+                        emailController.clear();
+                        nohpController.clear();
+                        alamatController.clear();
+                        provinsiController.clear();
+                        posController.clear();
+                        setState(() {
+                          _formKey.currentState!.validate();
+                        });
                       }, 
                       child: Text('Reset', style: TextStyle(color: Colors.orange),)
                     ),
