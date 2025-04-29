@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1flutter_20220140133/databarangpage.dart';
 import 'package:ucp1flutter_20220140133/datapelangganpage.dart';
 import 'package:ucp1flutter_20220140133/datapiketpage.dart';
 import 'package:ucp1flutter_20220140133/loginpage.dart';
@@ -159,7 +160,10 @@ class _HomePageState extends State<HomePage> {
               height: 140,
               child: GestureDetector(
                 onTap: () {
-
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DataBarangPage())
+                  );
                 },
                 child: Container(
                   decoration: BoxDecoration(
