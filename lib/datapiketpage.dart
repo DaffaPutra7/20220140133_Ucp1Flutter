@@ -83,6 +83,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Piket Gudang', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.orange,
@@ -94,8 +95,8 @@ class _DataPiketPageState extends State<DataPiketPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Nama Anggota'),
-              SizedBox(height: 5),
+              Text('Nama Anggota', style: TextStyle(fontWeight: FontWeight.bold),),
+              SizedBox(height: 10),
               TextFormField(
                 initialValue: widget.email,
                 enabled: false,
@@ -106,8 +107,8 @@ class _DataPiketPageState extends State<DataPiketPage> {
                 ),
               ),
               SizedBox(height: 20),
-              Text('Pilih Tanggal'),
-              SizedBox(height: 5),
+              Text('Pilih Tanggal', style: TextStyle(fontWeight: FontWeight.bold)),
+              SizedBox(height: 10),
               TextFormField(
                 controller: _tanggalController,
                 decoration: InputDecoration(
@@ -127,8 +128,8 @@ class _DataPiketPageState extends State<DataPiketPage> {
                 onTap: _pilihTanggal,
               ),
               SizedBox(height: 20),
-              Text('Tugas Piket'),
-              SizedBox(height: 5),
+              Text('Tugas Piket', style: TextStyle(fontWeight: FontWeight.bold)),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(
@@ -136,7 +137,7 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     child: TextFormField(
                       controller: _tugasController,
                       decoration: InputDecoration(
-                        hintText: 'Masukkan Tugas',
+                        hintText: 'Tugas Piket',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(color: Colors.orange)
@@ -155,18 +156,29 @@ class _DataPiketPageState extends State<DataPiketPage> {
                     ), 
                   ),
                   SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: _tambahTugas,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange,
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                    ), 
-                    child: Text('Tambah', style: TextStyle(color: Colors.white)),
-                  ),
+                  Expanded(
+                    flex: 2,
+                    child: SizedBox(
+                      child: ElevatedButton(
+                      onPressed: _tambahTugas,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)
+                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      ), 
+                      child: Text('Tambah', style: TextStyle(color: Colors.white)),
+                    ),
+                    )
+                  )
                 ],
               ),
               SizedBox(height: 20),
-              Text('Daftar Tugas Piket'),
+              Center(
+                child: Text('Daftar Tugas Piket',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
               SizedBox(height: 10),
               Expanded(
                 child: daftarTugas.isEmpty

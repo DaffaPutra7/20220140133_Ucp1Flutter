@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Padding(padding: EdgeInsets.all(15.0)),
-              Text('Email'),
+              Text('Email', style: TextStyle(fontWeight: FontWeight.bold)),
               Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
                 controller: emailController,
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               Padding(padding: const EdgeInsets.all(10.0)),
-              Text('Password',style: TextStyle(fontWeight: FontWeight.w500)),
+              Text('Password',style: TextStyle(fontWeight: FontWeight.bold)),
               Padding(padding: EdgeInsets.all(5.0)),
               TextFormField(
                 controller: passwordController,
