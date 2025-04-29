@@ -8,6 +8,7 @@ class DetailDataPelangganPage extends StatelessWidget {
   final String alamat;
   final String provinsi;
   final String kodepos;
+  final String emailLogin;
   const DetailDataPelangganPage({
     required this.nama,
     required this.email,
@@ -15,6 +16,7 @@ class DetailDataPelangganPage extends StatelessWidget {
     required this.alamat,
     required this.provinsi,
     required this.kodepos,
+    required this.emailLogin,
     super.key
     });
 
@@ -108,9 +110,9 @@ class DetailDataPelangganPage extends StatelessWidget {
                       elevation: 5,
                     ),
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context, 
-                        MaterialPageRoute(builder: (context) => HomePage(email: email))
+                        MaterialPageRoute(builder: (context) => HomePage(email: emailLogin))
                       );
                     }, 
                     child: Text('Selesai', style: TextStyle(color: Colors.white)),

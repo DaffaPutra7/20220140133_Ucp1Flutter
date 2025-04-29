@@ -123,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context, 
                         MaterialPageRoute(builder: (context) => HomePage(
                           email: emailController.text,

@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ucp1flutter_20220140133/detaildatapelangganpage.dart';
 
 class DataPelangganPage extends StatefulWidget {
-  const DataPelangganPage({super.key});
+  final String emailLogin;
+  const DataPelangganPage({
+    required this.emailLogin,
+    super.key
+  });
 
   @override
   State<DataPelangganPage> createState() => _DataPelangganPageState();
@@ -238,6 +242,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                               alamat: alamatController.text,
                               provinsi: provinsiController.text,
                               kodepos: posController.text,
+                              emailLogin: widget.emailLogin,
                             ))
                           );
                         }

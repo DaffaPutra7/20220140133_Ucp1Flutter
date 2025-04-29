@@ -4,7 +4,11 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:ucp1flutter_20220140133/detaildatabarangpage.dart';
 
 class DataBarangPage extends StatefulWidget {
-  const DataBarangPage({super.key});
+  final String emailLogin;
+  const DataBarangPage({
+    required this.emailLogin,
+    super.key
+  });
 
   @override
   State<DataBarangPage> createState() => _DataBarangPageState();
@@ -256,6 +260,7 @@ class _DataBarangPageState extends State<DataBarangPage> {
                           jumlah: jumlah,
                           harga: harga,
                           total: totalHarga,
+                          emailLogin: widget.emailLogin,
                           ),
                         ),
                       );

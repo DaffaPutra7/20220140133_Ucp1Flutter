@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp1flutter_20220140133/homepage.dart';
 
 class DetailDataBarangPage extends StatelessWidget {
   final String tanggal;
@@ -8,6 +9,7 @@ class DetailDataBarangPage extends StatelessWidget {
   final int jumlah;
   final int harga;
   final int total;
+  final String emailLogin;
   const DetailDataBarangPage({
     required this.tanggal,
     required this.jenisTransaksi,
@@ -15,6 +17,7 @@ class DetailDataBarangPage extends StatelessWidget {
     required this.jumlah,
     required this.harga,
     required this.total,
+    required this.emailLogin,
     super.key
   });
 
@@ -82,7 +85,10 @@ class DetailDataBarangPage extends StatelessWidget {
                     elevation: 5,
                   ),
                   onPressed: () {
-                    Navigator.popUntil(context, (route) => route.isFirst);
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage(email: emailLogin))
+                    );
                   },
                   child: const Text(
                     'Selesai',

@@ -260,7 +260,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           );
                           return;
                         } else {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context, 
                             MaterialPageRoute(builder: (context) => HomePage(
                               email: emailController.text)

@@ -125,7 +125,9 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context) => DataPelangganPage())
+                        MaterialPageRoute(builder: (context) => DataPelangganPage(
+                          emailLogin: widget.email,
+                        ))
                       );
                     },
                     child: Container(
@@ -162,7 +164,9 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DataBarangPage())
+                    MaterialPageRoute(builder: (context) => DataBarangPage(
+                      emailLogin: widget.email,
+                    ))
                   );
                 },
                 child: Container(
