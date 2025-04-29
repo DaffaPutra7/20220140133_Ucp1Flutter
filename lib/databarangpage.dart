@@ -228,6 +228,28 @@ class _DataBarangPageState extends State<DataBarangPage> {
                   ),
                 ],
               ),
+              SizedBox(height: 50),
+              SizedBox(
+                width: 500,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    elevation: 5,
+                  ),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      int jumlah = int.parse(_jumlahController.text);
+                      int harga = int.parse(_hargaController.text);
+                      int totalHarga = jumlah * harga;
+                    }
+                  },
+                  child: const Text('Submit', style: TextStyle(color: Colors.white)),
+                ),
+              ),
             ],
           ),
         ),
